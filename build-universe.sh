@@ -53,9 +53,14 @@ for repo in "${REPOS[@]}"; do
   git clone https://github.com/diagrams/$repo
 done
 
-## Build diagrams
+## Setup
 stack setup
 stack build gtk2hs-buildtools || exit 1
+
+## Generate stack.yaml for diagrams-doc
+cd diagrams-doc && ./generate-stack-yaml.hs
+
+## Build diagrams
 if [[ $OSTYPE == darwin* ]]; then
     stack exec -- stack build --flag gtk:have-quartz-gtk || exit 1
 else
@@ -63,12 +68,10 @@ else
 fi
 
 ## Build diagrams-haddock diagrams
-for repo in "${REPOS[@]}"; do
-  cd $repo && stack exec -- diagrams-haddock -d `stack path --dist-dir` || exit 1
-done
+# for repo in "${REPOS[@]}"; do
+#   cd $repo && stack exec -- diagrams-haddock -d `stack path --dist-dir` || exit 1
+# done
 
 ## Build the website
 cd diagrams-doc
-stack runghc Shake.hs clean
-stack ghc -- --make Shake -threaded || exit 1
-stack exec -- ./Shake +RTS -N7 -RTS build || exit 1
+stack exec diagrams-doc -- +RTS -N7 -RTS build || exit 1
