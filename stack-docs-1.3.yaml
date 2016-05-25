@@ -5,7 +5,7 @@ packages:
 - diagrams-doc/
 
 # Packages to be pulled from upstream that are not in the resolver (e.g., acme-missiles-0.3)
-extra-deps: {}
+extra-deps: []
 # - linear-1.20.2
 # - vector-0.11.0.0
 # - cubicbezier-0.4.0.2
