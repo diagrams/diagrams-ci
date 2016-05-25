@@ -6,6 +6,7 @@ TMPDIR=docs-$VERSION-tmp
 rm -rf $TMPDIR  # remove build dir in case it is still there from before
 mkdir $TMPDIR
 cd $TMPDIR
+
 ln -s ../stack-docs-$VERSION.yaml stack.yaml
 
 git clone https://github.com/diagrams/docutils
@@ -26,8 +27,7 @@ stack build || exit 1
 
 ## Build the website
 cd diagrams-doc
-stack runghc Shake.hs clean
-stack ghc -- --make Shake -threaded || exit 1
-stack exec -- ./Shake +RTS -N7 -RTS build || exit 1
+stack build
+stack exec diagrams-doc -- +RTS -N7 -RTS build
 
 ## Deploy
