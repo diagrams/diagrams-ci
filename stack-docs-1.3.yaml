@@ -1,39 +1,20 @@
-resolver: lts-3.8
+resolver: lts-5.17
+extra-deps:
+- tuple-0.3.0.2
+- OneTuple-0.2.1
+- SVGFonts-1.5.0.0
+- monoid-extras-0.4.0.4
+- active-0.2.0.9
+- dual-tree-0.2.0.9
+- diagrams-core-1.3.0.7
+- diagrams-solve-0.1.0.1
+- diagrams-lib-1.3.1.2
+- diagrams-rasterific-1.3.1.6
+- diagrams-builder-0.7.2.3
 
-# Local packages, usually specified by relative directory name
 packages:
-- docutils/
-- diagrams-doc/
-
-# Packages to be pulled from upstream that are not in the resolver (e.g., acme-missiles-0.3)
-extra-deps: []
-# - linear-1.20.2
-# - vector-0.11.0.0
-# - cubicbezier-0.4.0.2
-# - graphviz-2999.18.0.1
-# - texrunner-0.0.1.0
-
-# Override default flag values for local packages and extra-deps
-flags: {}
-  # diagrams-backend-tests:
-  #   svg: True
-  #   rasterific: True
-  #   postscript: True
-  #   pgf: True
-  #   canvas: True
-  #   cairo: True
-
-# Control whether we use the GHC we find on the path
-# system-ghc: true
-
-# Require a specific version of stack, using version ranges
-# require-stack-version: -any # Default
-# require-stack-version: >= 0.1.4.0
-
-# Override the architecture used by stack, especially useful on Windows
-# arch: i386
-# arch: x86_64
-
-# Extra directories used by stack for building
-# extra-include-dirs: [/path/to/dir]
-# extra-lib-dirs: [/path/to/dir]
+- '.'
+- location:
+    git: https://github.com/diagrams/docutils
+    commit: 1850209065225b5f2dc70da0574629ce14463e58
+  extra-dep: true
