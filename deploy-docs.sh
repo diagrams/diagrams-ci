@@ -9,7 +9,6 @@ cd $TMPDIR
 
 ln -s ../stack-docs-$VERSION.yaml stack.yaml
 
-git clone https://github.com/diagrams/docutils
 git clone https://github.com/diagrams/diagrams-doc
 
 cd diagrams-doc

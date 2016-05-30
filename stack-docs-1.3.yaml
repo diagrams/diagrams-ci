@@ -13,7 +13,7 @@ extra-deps:
 - diagrams-builder-0.7.2.3
 
 packages:
-- '.'
+- diagrams-doc/
 - location:
     git: https://github.com/diagrams/docutils
     commit: 1850209065225b5f2dc70da0574629ce14463e58
