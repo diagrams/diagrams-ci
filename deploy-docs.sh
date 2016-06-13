@@ -26,6 +26,6 @@ stack build || exit 1
 # done
 
 ## Build the website
-cd diagrams-doc && stack exec diagrams-doc -- +RTS -N7 -RTS build
+stack exec 'cd diagrams-doc && diagrams-doc -- +RTS -N7 -RTS build'
 
 ## Deploy
