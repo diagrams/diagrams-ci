@@ -10,11 +10,14 @@ extra-deps:
 - diagrams-solve-0.1.0.1
 - diagrams-lib-1.3.1.2
 - diagrams-rasterific-1.3.1.6
-- diagrams-builder-0.7.2.3
 
 packages:
 - diagrams-doc/
 - location:
     git: https://github.com/diagrams/docutils
     commit: 1850209065225b5f2dc70da0574629ce14463e58
+  extra-dep: true
+- location:
+    git: https://github.com/diagrams/diagrams-builder
+    commit: 7305c6c
   extra-dep: true
