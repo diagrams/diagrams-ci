@@ -13,6 +13,7 @@ git clone https://github.com/diagrams/diagrams-doc
 
 cd diagrams-doc
 git checkout deploy-$VERSION
+./generate-stack-yaml.hs
 cd ..
 
 ## Build diagrams
@@ -25,8 +26,6 @@ stack build || exit 1
 # done
 
 ## Build the website
-cd diagrams-doc
-stack build
-stack exec diagrams-doc -- +RTS -N7 -RTS build
+cd diagrams-doc && stack exec diagrams-doc -- +RTS -N7 -RTS build
 
 ## Deploy
