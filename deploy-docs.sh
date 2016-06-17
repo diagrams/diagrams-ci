@@ -13,7 +13,6 @@ git clone https://github.com/diagrams/diagrams-doc
 
 cd diagrams-doc
 git checkout deploy-$VERSION
-./generate-stack-yaml.hs
 cd ..
 
 ## Build diagrams
