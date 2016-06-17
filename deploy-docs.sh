@@ -25,6 +25,8 @@ stack build || exit 1
 # done
 
 ## Build the website
-stack exec bash -- -c 'cd diagrams-doc && diagrams-doc +RTS -N7 -RTS build'
+stack exec bash -- -c 'cd diagrams-doc && diagrams-doc +RTS -N7 -RTS buildh'
 
 ## Deploy
+rsync -r diagrams-doc/web/_site/* byorgey@projects.haskell.org:/srv/projects/diagrams/
+ssh byorgey@projects.haskell.org 'chmod -R o+rX /srv/projects/diagrams/*'
