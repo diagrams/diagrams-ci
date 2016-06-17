@@ -73,5 +73,4 @@ fi
 # done
 
 ## Build the website
-cd diagrams-doc
 stack exec diagrams-doc -- +RTS -N7 -RTS build || exit 1
