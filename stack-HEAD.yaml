@@ -53,6 +53,9 @@ flags: {}
   #   canvas: True
   #   cairo: True
 
+ghc-options:
+    "*": -Wall -Werror
+
 # Control whether we use the GHC we find on the path
 # system-ghc: true
 
