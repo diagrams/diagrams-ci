@@ -54,12 +54,16 @@ for repo in "${REPOS[@]}"; do
 done
 
 ## Setup
+echo 'Setting up stack...'
 stack setup
+echo 'Building gtk2hs-buildtools...'
 stack build gtk2hs-buildtools || exit 1
 
+echo 'Generating stack.yaml for diagrams-doc...'
 ## Generate stack.yaml for diagrams-doc
 cd diagrams-doc && ./generate-stack-yaml.hs
 
+echo 'Building...'
 ## Build diagrams
 if [[ $OSTYPE == darwin* ]]; then
     stack exec -- stack build --flag gtk:have-quartz-gtk || exit 1
