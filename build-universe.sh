@@ -68,7 +68,7 @@ echo 'Building...'
 if [[ $OSTYPE == darwin* ]]; then
     stack exec -- stack build --flag gtk:have-quartz-gtk || exit 1
 else
-    stack exec -- stack build || exit 1
+    stack -v exec -- stack build || exit 1
 fi
 
 ## Build diagrams-haddock diagrams
