@@ -59,7 +59,7 @@ stack setup
 echo 'Building gtk2hs-buildtools...'
 stack build gtk2hs-buildtools || exit 1
 echo 'Building everything with stack...'
-stack build
+stack build || exit 1
 
 echo 'Generating stack.yaml for diagrams-doc...'
 ## Generate stack.yaml for diagrams-doc
