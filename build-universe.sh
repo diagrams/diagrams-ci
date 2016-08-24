@@ -37,7 +37,7 @@ REPOS=(
   'diagrams-haddock'
   'docutils'
   'diagrams-backend-tests'
-  'package-ops'
+#  'package-ops'
 
   # miscellaneous
   'force-layout'
