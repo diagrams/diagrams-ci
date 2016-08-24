@@ -15,7 +15,7 @@ packages:
 - diagrams-contrib/
 - SVGFonts/
 - palette/
-# - diagrams-input/   # linear
+- diagrams-input/   # linear
 - diagrams-graphviz/
 - diagrams-builder/
 - statestack/
@@ -27,7 +27,6 @@ packages:
 - diagrams-povray/
 - diagrams-rasterific/
 - diagrams-svg/
-- diagrams-doc/
 - diagrams-haddock/
 - docutils/
 # - diagrams-backend-tests/   # JuicyPixels, vector

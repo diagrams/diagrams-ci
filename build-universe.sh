@@ -58,12 +58,14 @@ echo 'Setting up stack...'
 stack setup
 echo 'Building gtk2hs-buildtools...'
 stack build gtk2hs-buildtools || exit 1
+echo 'Building everything with stack...'
+stack build
 
 echo 'Generating stack.yaml for diagrams-doc...'
 ## Generate stack.yaml for diagrams-doc
 cd diagrams-doc && ./generate-stack-yaml.hs
 
-echo 'Building...'
+echo 'Building diagrams-doc...'
 ## Build diagrams
 if [[ $OSTYPE == darwin* ]]; then
     stack exec -- stack build --flag gtk:have-quartz-gtk || exit 1
